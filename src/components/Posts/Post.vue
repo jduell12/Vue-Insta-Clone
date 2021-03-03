@@ -37,8 +37,12 @@ export default{
   margin: 15px 0;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
 }
+.post-image {
+  width: 100%;
+}
 .post-image-wrapper {
   height: 100%;
   width: 100%;
 }
+
 </style>
