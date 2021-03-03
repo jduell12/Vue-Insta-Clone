@@ -12,7 +12,7 @@
             </div>
         </div>
         <p class="like-number">
-            likes
+            {{ likes }} likes
         </p>
     </div>
 </template>
@@ -20,7 +20,13 @@
 <script>
 
 export default{
-    name: 'PostLike'
+    name: 'PostLike', 
+    props: {
+        likes: {
+            type: Number,
+            default: 0
+        }
+    }
 }
 </script>
 

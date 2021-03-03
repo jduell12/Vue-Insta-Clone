@@ -11,7 +11,7 @@
                 class="post-image"
             >
         </div>
-        <LikeSection />
+        <LikeSection :likes="post.likes" />
     </div>
 </template>
 
