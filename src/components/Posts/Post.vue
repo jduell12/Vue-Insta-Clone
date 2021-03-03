@@ -12,17 +12,21 @@
             >
         </div>
         <LikeSection :likes="post.likes" />
+        <Comments :comments="post.comments" />
     </div>
 </template>
 
 <script>
 import PostHeader from './PostHeader'
 import LikeSection from './PostLike'
+import Comments from '../Comments/Comments'
+
 export default{
     name: 'Post', 
     components: {
         PostHeader, 
-        LikeSection
+        LikeSection,
+        Comments
     },
     props: {
         post: {
