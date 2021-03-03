@@ -26,6 +26,7 @@ export default {
       return data 
     }
   }, 
+  //fetches data to populate the state of posts 
   async mounted(){
     this.posts = await this.fetchPosts()
   }

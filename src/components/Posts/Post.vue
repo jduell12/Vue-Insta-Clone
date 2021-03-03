@@ -11,15 +11,18 @@
                 class="post-image"
             >
         </div>
+        <LikeSection />
     </div>
 </template>
 
 <script>
 import PostHeader from './PostHeader'
+import LikeSection from './PostLike'
 export default{
     name: 'Post', 
     components: {
-        PostHeader
+        PostHeader, 
+        LikeSection
     },
     props: {
         post: {
