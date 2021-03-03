@@ -1,5 +1,7 @@
 # vue-insta-clone
 
+A simple instagram clone to learn the Vue framework. A file called dummy-data.js contains mock data which could be used in a database associated with this project. The application receives the mock data and renders it as a separate instagram post. 
+
 ## Project setup
 ```
 npm install
