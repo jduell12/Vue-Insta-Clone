@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import { onMounted } from '@vue/runtime-core';
 
 import Posts from './components/Posts/Posts'
 
@@ -23,10 +24,10 @@ export default {
       const res = await fetch('api/posts')
       const data = await res.json()
       return data 
-    }, 
-    async created(){
-      this.posts = await this.fetchPosts()
     }
+  }, 
+  async mounted(){
+    this.posts = await this.fetchPosts()
   }
 };
 </script>
