@@ -5,7 +5,10 @@
             v-for="post in posts" 
             :key="post.id"
         >
-            <Post :post="post" />
+            <Post 
+                :post="post" 
+                @likePost="$emit('likePost', post.id)"
+            />
         </div>
     </div>
 </template>
@@ -23,6 +26,7 @@ export default {
             default: () => []
         }
     }, 
+    emits: ['likePost']
     
 }
 </script>

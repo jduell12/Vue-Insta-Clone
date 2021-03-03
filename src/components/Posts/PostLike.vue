@@ -8,7 +8,10 @@
                 <i class="far fa-heart" />
             </div>
             <div class="like-section-wrapper">
-                <i class="far fa-thumbs-up" />
+                <i 
+                    class="far fa-thumbs-up" 
+                    @click="$emit('likePost', likepost.id)" 
+                />
             </div>
         </div>
         <p class="like-number">
@@ -25,8 +28,13 @@ export default{
         likes: {
             type: Number,
             default: 0
+        },
+        likepost: {
+            type: Object,
+            default: () => {}
         }
-    }
+    },
+    emits: ['likePost']
 }
 </script>
 

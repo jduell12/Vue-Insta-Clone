@@ -11,7 +11,11 @@
                 class="post-image"
             >
         </div>
-        <LikeSection :likes="post.likes" />
+        <LikeSection 
+            :likes="post.likes" 
+            :likepost="post"
+            @likePost="$emit('likePost', post.id)"
+        />
         <Comments :comments="post.comments" />
     </div>
 </template>
@@ -32,8 +36,9 @@ export default{
         post: {
             type: Object, 
             default: () => {}
-        }
+        }, 
     }, 
+    emits: ['likePost']
     
 }
 </script>
