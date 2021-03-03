@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Posts />
+    <Posts :posts="posts"/>
   </div>
 </template>
 
@@ -12,6 +12,21 @@ export default {
   name: "App", 
   components: {
     Posts
+  }, 
+  data(){
+    return{
+      posts: []
+    }
+  }, 
+  methods: {
+    async fetchPosts(){
+      const res = await fetch('api/posts')
+      const data = await res.json()
+      return data 
+    }, 
+    async created(){
+      this.posts = await this.fetchPosts()
+    }
   }
 };
 </script>
