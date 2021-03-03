@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <div class="App">
+        <SearchBar />
         <Posts 
             :posts="posts" 
             @likePost="likePost"
@@ -9,11 +10,13 @@
 
 <script>
 import Posts from './components/Posts/Posts'
+import SearchBar from './components/SearchBar'
 
 export default {
     name: "App", 
     components: {
-        Posts
+        Posts,
+        SearchBar
     }, 
     data(){
         return{
@@ -55,12 +58,32 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.App {
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+.App-title {
+  font-size: 1.5em;
+}
+.App-intro {
+  font-size: large;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 </style>

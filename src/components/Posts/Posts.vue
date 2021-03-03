@@ -1,6 +1,5 @@
 <template>
     <div class="posts-container-wrapper">
-        <h1>Posts</h1>
         <div 
             v-for="post in posts" 
             :key="post.id"
