@@ -7,6 +7,7 @@
             </div>
             <form class="search-form">
                 <input 
+                    v-model="searchterm"
                     type="text" 
                     name="search" 
                     placeholder="Search"
@@ -29,7 +30,20 @@
 
 <script>
 export default {
-    name: 'SearchBar'
+    name: 'SearchBar', 
+    props:{
+        search: {
+            type: String, 
+            default: ''
+        }
+    },    
+    emits: ['changeHandler'],
+    data(){
+        return {
+            searchterm: ''
+        }
+    },
+    
 }
 </script>
 

@@ -1,6 +1,10 @@
 <template>
     <div class="App">
-        <SearchBar />
+        <SearchBar 
+            :search="searchterm"
+            @changeHandler="changeHandler" 
+        />
+        {{ searchterm }}
         <Posts 
             :posts="posts" 
             @likePost="likePost"
@@ -20,7 +24,8 @@ export default {
     }, 
     data(){
         return{
-            posts: []
+            posts: [],
+            searchterm: ''
         }
     }, 
     //fetches data to populate the state of posts 
@@ -52,6 +57,9 @@ export default {
             const data = await res.json()
 
             this.posts = this.posts.map(post => post.id === postId ? {...post, likes: post.likes+1} : post)
+        }, 
+        changeHandler(event){
+            this.searchterm = event.target.value
         }
     }
 };
